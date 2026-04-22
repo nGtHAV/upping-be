@@ -5,8 +5,6 @@ services:
     build: .
     container_name: upping-be
     restart: unless-stopped
-    ports:
-      - "8000:8000"
     volumes:
       - upping-data:/app/data
     environment:
