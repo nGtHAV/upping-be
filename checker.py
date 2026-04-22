@@ -15,7 +15,7 @@ async def check_site(site: Dict[str, Any], user_id: str) -> Dict[str, Any]:
     
     try:
         async with httpx.AsyncClient(timeout=10, follow_redirects=True) as client:
-            response = await client.get(url)
+            response = await client.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"})
             http_code = response.status_code
             if http_code < 400:
                 status = "UP"
